@@ -1,1 +1,7 @@
 <p>news works!</p>
+<!-- {{newslists|json}} -->
+<ul *ngFor="let newsList of newslists">
+  <li>
+    {{newsList.source.name}}
+  </li>
+</ul>
