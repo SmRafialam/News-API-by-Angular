@@ -16,12 +16,22 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.newsService.getNewsList('food')
+    // this.newsService.getNewsList().subscribe((data:any)=>{
+    //   console.log(data);
+    //   this.newslists = data.articles;
+    // })
+
+    this.newsService.getNewsList()
               .subscribe((data: any)=>{
 
                 console.log(data)
                 this.newslists = data.articles;
               })
+  }
+
+  getNewsById(id:any) {
+    const newsItem = this.newslists.find(item => item.source.id === id);
+    return newsItem;
   }
 
 

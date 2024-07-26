@@ -1,0 +1,15 @@
+<!-- <small class="text-body-secondary">{{newsList.url}}</small> -->
+<!-- src/app/news-details/news-details.component.html -->
+<div *ngIf="newsDetail">
+    <h1>{{ newsDetail.title }}</h1>
+    <p><strong>Author:</strong> {{ newsDetail.author }}</p>
+    <p><strong>Published Date:</strong> {{ newsDetail.publishedAt | date }}</p>
+    <img [src]="newsDetail.imageUrl" alt="News Image" class="img-fluid">
+    <p>{{ newsDetail.content }}</p>
+    <a [href]="newsDetail.url" target="_blank">Read full article</a>
+  </div>
+  
+  <div *ngIf="!newsDetail">
+    <p>Loading news details...</p>
+  </div>
+  
